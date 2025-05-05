@@ -15,3 +15,7 @@
 🚀 Developer Friendly: Pre-configured scripts for development, production builds, and database management.
 
 
+VIDEO OF MY WEBSITE:
+
+https://github.com/user-attachments/assets/4f25a7ee-1424-41fc-862a-a447a2b926b2
+
