@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@200;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 33% 10%;
+    --foreground: 210 40% 98%;
+    
+    --card: 217 40% 18%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 220 33% 10%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 46 65% 52%;
+    --primary-foreground: 220 33% 10%;
+    
+    --secondary: 220 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 217 33% 25%;
+    --muted-foreground: 215 20% 80%;
+    
+    --accent: 46 65% 52%;
+    --accent-foreground: 220 33% 10%;
+    
+    --destructive: 348 83% 47%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217 33% 22%;
+    --input: 217 33% 22%;
+    --ring: 46 65% 52%;
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-[#0A1128] text-white;
+  }
+  
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-md bg-[#0A1128]/80 border border-[#D4AF37]/10;
+  }
+  
+  .movie-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 group-hover:opacity-90 transition-opacity z-10;
+  }
+  
+  .progress-bar {
+    @apply absolute bottom-0 left-0 right-0 h-1 bg-[#1C2541] z-20;
+  }
+  
+  .progress-bar-fill {
+    @apply h-full bg-[#D4AF37];
+  }
+  
+  .play-button {
+    @apply absolute inset-0 m-auto w-12 h-12 rounded-full bg-[#DC143C] flex items-center justify-center opacity-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300 z-30;
+  }
+  
+  .feature-tag {
+    @apply text-xs uppercase tracking-wider px-3 py-1 border border-[#D4AF37]/30 rounded-sm hover:border-[#D4AF37]/70 transition-colors inline-flex items-center;
+  }
+}
+
+/* Custom animations */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.bounce-animation {
+  animation: bounce 2s infinite;
+}
