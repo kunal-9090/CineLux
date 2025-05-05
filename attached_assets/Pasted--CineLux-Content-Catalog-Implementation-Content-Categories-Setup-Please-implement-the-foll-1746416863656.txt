@@ -1,0 +1,173 @@
+# CineLux Content Catalog Implementation
+
+## Content Categories Setup
+
+Please implement the following content categories in the CineLux platform:
+
+1. **Action**
+   - Distinctive visual treatment with dynamic thumbnails
+   - Red/orange color accent (#FF5733)
+   - Icon suggestion: crossed swords or explosion icon
+   - Display priority: Primary row on homepage
+
+2. **Thriller**
+   - Tense, suspenseful visual treatment
+   - Deep purple color accent (#8A2BE2)
+   - Icon suggestion: heartbeat line or masked figure
+   - Display priority: Secondary row on homepage
+
+3. **Horror**
+   - Dark, ominous visual treatment
+   - Blood red color accent (#8B0000)
+   - Icon suggestion: skull or haunted house
+   - Display priority: Featured during evening hours
+
+4. **Mystery**
+   - Enigmatic, puzzle-themed visual treatment
+   - Deep blue color accent (#191970)
+   - Icon suggestion: magnifying glass or question mark
+   - Display priority: Third row on homepage
+
+5. **Crime**
+   - Gritty, noir-inspired visual treatment
+   - Steely gray color accent (#708090)
+   - Icon suggestion: handcuffs or detective hat
+   - Display priority: Fourth row on homepage
+
+## Franchise Collections
+
+Please create the following franchise collections with special visual treatment:
+
+### Marvel Collection (10 films)
+- **Collection Banner**: Create a dynamic banner with Marvel logo and iconic characters
+- **Special Feature**: Timeline viewing order toggle
+- **Background**: Cosmic-themed gradient background (#1A2980 to #26D0CE)
+- **Films to Include**:
+  1. "Iron Man" (2008) - Category: Action
+  2. "Captain America: The First Avenger" (2011) - Category: Action
+  3. "The Avengers" (2012) - Category: Action
+  4. "Guardians of the Galaxy" (2014) - Category: Action/Comedy
+  5. "Captain America: Civil War" (2016) - Category: Action/Thriller
+  6. "Black Panther" (2018) - Category: Action/Drama
+  7. "Avengers: Infinity War" (2018) - Category: Action/Drama
+  8. "Avengers: Endgame" (2019) - Category: Action/Drama
+  9. "Spider-Man: No Way Home" (2021) - Category: Action/Adventure
+  10. "Doctor Strange in the Multiverse of Madness" (2022) - Category: Action/Horror
+
+### DC Extended Universe (10 films)
+- **Collection Banner**: Create a stormy, dramatic banner with DC logo
+- **Special Feature**: Heroes vs. Villains filtering option
+- **Background**: Dark city skyline background (#000428 to #004e92)
+- **Films to Include**:
+  1. "Man of Steel" (2013) - Category: Action
+  2. "Batman v Superman: Dawn of Justice" (2016) - Category: Action
+  3. "Suicide Squad" (2016) - Category: Action/Crime
+  4. "Wonder Woman" (2017) - Category: Action/Adventure
+  5. "Justice League" (2017) - Category: Action
+  6. "Aquaman" (2018) - Category: Action/Adventure
+  7. "Shazam!" (2019) - Category: Action/Comedy
+  8. "Birds of Prey" (2020) - Category: Action/Crime
+  9. "Wonder Woman 1984" (2020) - Category: Action/Adventure
+  10. "The Batman" (2022) - Category: Crime/Mystery
+
+### John Wick Series (4 films)
+- **Collection Banner**: Sleek, neon-noir aesthetic with gun iconography
+- **Special Feature**: Kill count statistics for each film
+- **Background**: Neon city nightlife background (#5F0A87 to #A4508B)
+- **Films to Include**:
+  1. "John Wick" (2014) - Category: Action/Crime
+  2. "John Wick: Chapter 2" (2017) - Category: Action/Crime
+  3. "John Wick: Chapter 3 – Parabellum" (2019) - Category: Action/Crime
+  4. "John Wick: Chapter 4" (2023) - Category: Action/Crime
+
+### Horror Highlights (6 films)
+- **Collection Banner**: Eerie, unsettling design with horror elements
+- **Special Feature**: Scare factor rating system
+- **Background**: Fog and darkness background (#200122 to #6f0000)
+- **Films to Include**:
+  1. "The Conjuring" (2013) - Category: Horror
+  2. "Hereditary" (2018) - Category: Horror/Mystery
+  3. "A Quiet Place" (2018) - Category: Horror/Thriller
+  4. "The Invisible Man" (2020) - Category: Horror/Thriller
+  5. "Midsommar" (2019) - Category: Horror/Mystery
+  6. "The Witch" (2015) - Category: Horror/Mystery
+
+## Content Metadata Requirements
+
+For each film, please implement the following metadata:
+
+- **Title**: Full film title with year
+- **Synopsis**: 2-3 sentence description of the plot without spoilers
+- **Duration**: Runtime in minutes
+- **Director**: Full name of the director
+- **Main Cast**: Top 3-5 actors
+- **Rating**: MPAA rating (PG, PG-13, R, etc.)
+- **User Rating**: 5-star system with average score
+- **Release Year**: Year the film was released
+- **Categories**: Primary and secondary genre tags
+- **Franchise**: Associated universe/franchise
+- **Thumbnail**: High-quality poster artwork
+- **Banner Image**: Cinematic widescreen scene from the film
+- **Trailer**: Link to official trailer
+- **Points Value**: Amount of points earned for watching (scaled by film duration)
+
+## User Interface Implementation
+
+Please implement the following UI features for content browsing:
+
+1. **Category Navigation**:
+   - Horizontal scrolling category selector at top of browse page
+   - Visual indicator of currently selected category
+   - Quick-jump buttons to franchise collections
+
+2. **Content Organization**:
+   - Grid view with consistent 2:3 aspect ratio thumbnails
+   - Hover animations with brief synopsis and metadata
+   - Clear franchise indicators on thumbnails
+   - Points value displayed in gold
+
+3. **Browse Filters**:
+   - Year range slider
+   - Runtime filter (short/medium/long)
+   - Rating filter
+   - "New Additions" toggle
+   - "Trending Now" section based on viewing data
+
+4. **Collection Showcases**:
+   - Horizontally scrolling carousels for each franchise
+   - Special visual treatment for collection headers
+   - "View All" expansion option
+   - Collection progress indicator (e.g., "3/10 watched")
+
+5. **Recommendation Logic**:
+   - "Because you watched..." sections
+   - "Complete the franchise" prompts
+   - Genre-based recommendations
+   - "Earn more points" suggestions featuring high-value content
+
+## Gamification Integration
+
+Integrate these content-specific gamification elements:
+
+1. **Franchise Achievements**:
+   - "Marvel Master" for watching all Marvel films
+   - "DC Devotee" for watching all DC films
+   - "Wick's Witness" for completing the John Wick series
+   - "Horror Aficionado" for watching all horror selections
+
+2. **Category Challenges**:
+   - "Action Enthusiast" for watching 5+ action films
+   - "Mystery Solver" for watching 3+ mystery films
+   - "Thrill Seeker" for watching 3+ thrillers in a week
+
+3. **Content-Specific Quizzes**:
+   - Trivia questions about watched films
+   - Franchise-specific knowledge tests
+   - Director/actor recognition challenges
+
+4. **Viewing Rewards**:
+   - Franchise completion badges
+   - Digital collectibles from favorite films
+   - Bonus points for weekend movie marathons
+
+Please ensure all content is properly licensed and includes appropriate copyright notices. Additionally, implement content advisories for mature themes and parental control options for restricting access to certain ratings.

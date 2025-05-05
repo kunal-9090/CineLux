@@ -1,0 +1,255 @@
+# CineLux Premium Website Design Specification
+
+## Brand Identity
+
+### Brand Essence
+Create a streaming platform that exudes luxury, exclusivity, and sophistication while maintaining a user-friendly interface. CineLux should feel like a premium cinema experience brought into the digital realm.
+
+### Color Palette
+- **Primary**: Deep midnight blue (#0A1128) - Conveys premium, sophisticated atmosphere
+- **Secondary**: Rich gold (#D4AF37) - Adds luxury accents and highlights
+- **Tertiary**: Crimson red (#DC143C) - For call-to-action elements
+- **Background Gradients**: 
+  - Dark gradient from #0A1128 to #1C2541
+  - Gold gradient from #D4AF37 to #F2CA52
+- **Text**: 
+  - Primary text: Pure white (#FFFFFF) for maximum contrast
+  - Secondary text: Light silver (#E5E5E5)
+  - Tertiary text: Gold (#D4AF37) for highlights
+
+### Typography
+- **Primary Font**: Gotham or Proxima Nova - Clean, modern sans-serif
+- **Secondary Font**: Playfair Display - Elegant serif for titles and featured content
+- **Font Weights**: 
+  - Ultra-light (200) for large headings
+  - Regular (400) for body text
+  - Bold (700) for emphasis and navigation
+- **Font Sizing**: 
+  - Implement a clear typographic hierarchy
+  - Use generous line spacing (1.5x) for readability
+
+## User Interface Components
+
+### Navigation
+- **Primary Navigation**: 
+  - Sleek, semi-transparent overlay that becomes opaque on scroll
+  - Gold accent line to highlight current section
+  - Subtle hover animations with gold underline effect
+- **Secondary Navigation**: 
+  - Hidden in an elegant hamburger menu on mobile
+  - Expands with a smooth animation effect
+- **Search Function**: 
+  - Prominent search icon with expanding search field
+  - Advanced filtering with animated dropdown menus
+
+### Hero Section
+- **Video Background**: 
+  - Auto-playing, high-quality cinematic montage (muted)
+  - Subtle parallax effect on scroll
+  - Optimized 4K resolution with dark overlay gradient
+- **Main Title**: 
+  - Large, bold typography with subtle text shadow
+  - Animated entrance effect (fade in and subtle upward movement)
+- **Call-to-Action Button**: 
+  - Bold, crimson button with golden border
+  - Subtle hover animation with glow effect
+  - Clear "Start Watching" or "Join Now" text
+
+### Content Showcases
+- **Featured Content Carousel**: 
+  - Large, cinematic aspect ratio (2.35:1)
+  - Smooth, slow-transitioning autoplay
+  - Interactive navigation with golden indicator dots
+- **Content Thumbnails**: 
+  - Consistent 16:9 aspect ratio
+  - Golden border appears on hover
+  - Subtle scale animation on hover (1.05x)
+  - High-quality artwork with consistent styling
+- **Genre Categories**: 
+  - Horizontal scrolling with elegant scroll indicators
+  - Distinctive iconography for each genre
+  - Animated transition between categories
+
+### Movie/Show Details
+- **Background**: Full-width backdrop image with parallax effect
+- **Information Layout**: 
+  - Clean two-column layout on desktop
+  - Single column with proper spacing on mobile
+  - Golden accents for important metadata (rating, release year)
+- **Play Button**: 
+  - Oversized, centered play icon with pulse animation
+  - Transforms into loading spinner during video initialization
+- **Additional Information**: 
+  - Collapsible sections with smooth animations
+  - Cast photos with elegant hover effects
+
+### Gamification Elements
+- **Points Display**: 
+  - Premium counter in header with gold accents
+  - Subtle animation when points increase
+  - Micro-interactions acknowledge point accumulation
+- **Leaderboard**: 
+  - Elegant table design with alternating row shading
+  - Gold highlight for user's own position
+  - Animated entrance for top rankings
+- **Rewards Showcase**: 
+  - Card-based design with premium imagery
+  - Clear indication of point requirements
+  - Golden "unlock" animation when achievable
+
+### User Profile
+- **Profile Picture**: 
+  - Circular frame with subtle golden border
+  - Custom achievement badges displayed around edge
+- **Stats Visualization**: 
+  - Clean, minimal data visualization
+  - Animated progress bars with gold gradient
+  - Interactive elements that respond to hover
+- **Preferences Section**: 
+  - Toggle switches with golden accent when active
+  - Clean categorization with expandable sections
+  - Visual feedback for all interactions
+
+## Technical Details
+
+### Responsiveness
+- **Breakpoints**: 
+  - Mobile: 320px-767px
+  - Tablet: 768px-1023px
+  - Desktop: 1024px-1439px
+  - Large Desktop: 1440px+
+- **Elements**: 
+  - Cards, grids, and containers fluidly adjust to viewport
+  - Typography scales proportionally across devices
+  - Navigation transforms appropriately for each device
+
+### Animations & Transitions
+- **Page Transitions**: Subtle fade with 300ms duration
+- **Element Animations**: 
+  - Smooth entrance animations using CSS transforms
+  - Micro-interactions for all interactive elements (scale, color shifts)
+  - Performance-optimized animations (transform and opacity only)
+- **Loading States**: 
+  - Elegant golden spinner animation
+  - Content skeleton screens with subtle pulse effect
+  - Progressive loading of images (blur-up technique)
+
+### Special Effects
+- **Glass Morphism**: 
+  - Subtle frosted glass effect for overlays
+  - 15% opacity white border on light elements
+  - 10% opacity black border on dark elements
+- **Shadows**: 
+  - Layered shadow effects (inner and drop shadows)
+  - Golden glow effects on premium elements
+  - Subtle ambient light effect from UI elements
+- **Particles**: 
+  - Subtle gold particle effects for achievements
+  - Celebratory particle burst for significant milestones
+
+## Page-Specific Designs
+
+### Homepage
+- Cinematic hero video with featured new releases
+- Personalized content row at the top of the browsing section
+- Featured franchise collections with distinctive visual treatment
+- Recently watched content with progress indicators
+- Weekly leaderboard snapshot with animated entrance
+
+### Browse Page
+- Advanced filtering system with elegant dropdown menus
+- Toggle between grid and list views with smooth transition
+- Animated genre navigation with distinctive iconography
+- "Premium Spotlight" section with special visual treatment
+- Infinite scroll with elegant loading indicator
+
+### Movie/Show Page
+- Full-screen trailer capability with cinematic controls
+- Interactive cast and crew section with horizontal scrolling
+- Related content recommendations with intelligent algorithms
+- One-click add to watchlist with satisfying animation
+- Content-specific trivia and point earning opportunities
+
+### Profile Page
+- Visually appealing stats dashboard with animated charts
+- Achievement showcase with premium visual treatment
+- Viewing history with advanced filtering capabilities
+- Reward redemption center with clear visual hierarchy
+- Social connections with leaderboard positioning
+
+### Gamification Hub
+- Weekly challenge showcase with countdown timers
+- Achievement roadmap with progress visualization
+- Reward catalog with premium presentation
+- Interactive point history with data visualization
+- Friends leaderboard with real-time updates
+
+## Accessibility & Usability
+
+### Accessibility Features
+- WCAG 2.1 AA compliance throughout the application
+- Proper contrast ratios (minimum 4.5:1 for normal text)
+- Clear focus states with gold highlighting
+- Screen reader optimization with proper ARIA attributes
+- Keyboard navigation support with visible focus indicators
+
+### User Experience Enhancements
+- Smart search with predictive results
+- Personalized content recommendations
+- Remember viewing progress across devices
+- Quick resume functionality with one-click access
+- Simplified account management with clear visual guidance
+
+## Implementation Notes
+
+### No-Code AI Platform Configuration
+- Utilize custom CSS injection where available
+- Implement JavaScript for micro-interactions
+- Use premium templates as starting points, then customize extensively
+- Create component libraries for consistent styling
+- Build custom animations using the platform's animation tools
+
+### Optimization Guidelines
+- Compress and properly size all images
+- Implement lazy loading for off-screen content
+- Use next-gen image formats (WebP) with fallbacks
+- Optimize font loading with proper subsetting
+- Implement code splitting for faster initial load
+
+### Testing Requirements
+- Cross-browser testing on latest Chrome, Safari, Firefox, Edge
+- Device testing on iPhone, Android, tablet, and desktop
+- Performance testing with Google Lighthouse (90+ score target)
+- Usability testing with representative user groups
+- Accessibility testing with screen readers
+
+## Example Section Markup (Homepage Hero)
+
+```html
+<section class="cinelux-hero">
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="hero-reel.mp4" type="video/mp4">
+    </video>
+    <div class="overlay-gradient"></div>
+  </div>
+  
+  <div class="hero-content">
+    <h1 class="hero-title">Experience Cinema, Elevated</h1>
+    <p class="hero-subtitle">Premium streaming with rewards that matter</p>
+    <button class="cta-button primary">Start Your Journey</button>
+    <div class="feature-tags">
+      <span>4K Ultra HD</span>
+      <span>Exclusive Content</span>
+      <span>Weekly Rewards</span>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator">
+    <span class="icon-scroll"></span>
+    <span class="scroll-text">Explore Library</span>
+  </div>
+</section>
+```
+
+This comprehensive design specification provides all the necessary details to create an extraordinarily premium streaming platform that stands apart from competitors through its sophisticated visual design, thoughtful interactions, and seamless user experience.

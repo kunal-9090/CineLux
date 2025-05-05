@@ -1,0 +1,271 @@
+import { useState } from 'react';
+import { Play, Star, Award, Crown, ChevronRight, User, Search } from 'lucide-react';
+
+export default function CineLuxUIPreview() {
+  const [activeTab, setActiveTab] = useState('home');
+  const [searchOpen, setSearchOpen] = useState(false);
+  
+  return (
+    <div className="bg-[#0A1128] min-h-screen text-white font-sans">
+      {/* Premium Navigation Bar */}
+      <nav className="flex items-center justify-between px-6 py-4 bg-[#0A1128] bg-opacity-90 backdrop-blur-md border-b border-[#D4AF37] border-opacity-30">
+        <div className="flex items-center">
+          <h1 className="text-2xl font-bold text-white">
+            <span className="text-[#D4AF37]">Cine</span>Lux
+          </h1>
+          <div className="hidden md:flex ml-10 space-x-6">
+            <NavItem label="Home" active={activeTab === 'home'} onClick={() => setActiveTab('home')} />
+            <NavItem label="Movies" active={activeTab === 'movies'} onClick={() => setActiveTab('movies')} />
+            <NavItem label="Series" active={activeTab === 'series'} onClick={() => setActiveTab('series')} />
+            <NavItem label="Rewards" active={activeTab === 'rewards'} onClick={() => setActiveTab('rewards')} />
+          </div>
+        </div>
+        <div className="flex items-center space-x-4">
+          <div className="relative">
+            {searchOpen ? (
+              <input 
+                type="text" 
+                className="bg-[#1C2541] border border-[#D4AF37] rounded-full py-2 px-4 pl-10 w-64 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                placeholder="Search movies, series..."
+                autoFocus
+                onBlur={() => setSearchOpen(false)}
+              />
+            ) : (
+              <button 
+                className="text-[#E5E5E5] hover:text-[#D4AF37] transition-colors"
+                onClick={() => setSearchOpen(true)}
+              >
+                <Search size={20} />
+              </button>
+            )}
+            {searchOpen && (
+              <Search size={16} className="absolute left-3 top-2.5 text-[#D4AF37]" />
+            )}
+          </div>
+          <div className="flex items-center px-3 py-1 rounded-full bg-[#1C2541] border border-[#D4AF37] border-opacity-50">
+            <Star size={16} className="text-[#D4AF37]" />
+            <span className="ml-2 text-sm font-medium">2,450 points</span>
+          </div>
+          <div className="w-8 h-8 rounded-full bg-[#D4AF37] flex items-center justify-center">
+            <User size={16} className="text-[#0A1128]" />
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <div className="relative h-96 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A1128] via-[#0A1128]/70 to-transparent z-10"></div>
+        <img src="/api/placeholder/1920/1080" alt="Movie backdrop" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 flex flex-col justify-center px-12 z-20">
+          <h2 className="text-4xl md:text-6xl font-bold mb-2">Interstellar</h2>
+          <p className="text-[#E5E5E5] max-w-lg mb-6">Journey through space and time in this epic adventure about human connection and the power of love.</p>
+          <div className="flex space-x-4">
+            <button className="bg-[#DC143C] hover:bg-[#DC143C]/90 text-white px-6 py-3 rounded-md flex items-center transition-all shadow-lg hover:shadow-xl border border-transparent hover:border-[#D4AF37]">
+              <Play size={20} className="mr-2" /> Watch Now
+            </button>
+            <button className="bg-transparent border border-[#D4AF37] text-white px-6 py-3 rounded-md hover:bg-[#D4AF37]/10 transition-all">
+              Add to Watchlist
+            </button>
+          </div>
+          <div className="flex items-center mt-6 space-x-4">
+            <span className="flex items-center">
+              <Star fill="#D4AF37" stroke="none" size={16} className="mr-1" />
+              <span className="text-sm">8.6</span>
+            </span>
+            <span className="w-1 h-1 rounded-full bg-[#E5E5E5]"></span>
+            <span className="text-sm">2014</span>
+            <span className="w-1 h-1 rounded-full bg-[#E5E5E5]"></span>
+            <span className="text-sm">169 min</span>
+            <span className="w-1 h-1 rounded-full bg-[#E5E5E5]"></span>
+            <span className="text-sm text-[#D4AF37]">+25 points</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Content Row */}
+      <div className="px-6 py-8">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-xl font-bold">Continue Watching</h3>
+          <button className="flex items-center text-sm text-[#D4AF37] hover:underline">
+            View All <ChevronRight size={16} />
+          </button>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <ContentCard 
+            title="The Dark Knight" 
+            image="/api/placeholder/300/450" 
+            progress={70}
+            rating={9.0}
+            year="2008"
+          />
+          <ContentCard 
+            title="Inception" 
+            image="/api/placeholder/300/450" 
+            progress={30}
+            rating={8.8}
+            year="2010"
+          />
+          <ContentCard 
+            title="Dune" 
+            image="/api/placeholder/300/450" 
+            progress={45}
+            rating={8.0}
+            year="2021"
+          />
+          <ContentCard 
+            title="The Matrix" 
+            image="/api/placeholder/300/450" 
+            progress={90}
+            rating={8.7}
+            year="1999"
+          />
+        </div>
+      </div>
+
+      {/* Gamification Section */}
+      <div className="px-6 py-8 bg-gradient-to-r from-[#1C2541] to-[#0A1128]">
+        <h3 className="text-xl font-bold mb-6 flex items-center">
+          <Award size={20} className="text-[#D4AF37] mr-2" />
+          Your Achievements
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <AchievementCard 
+            title="Franchise Master" 
+            description="Complete watching all Marvel movies" 
+            progress={80}
+            icon={<Award size={24} />}
+            points={100}
+          />
+          <AchievementCard 
+            title="Weekly Watcher" 
+            description="Watch content for 7 consecutive days" 
+            progress={100}
+            icon={<Star size={24} />}
+            points={50}
+            completed
+          />
+          <AchievementCard 
+            title="Quiz Champion" 
+            description="Score 100% on 5 different movie quizzes" 
+            progress={40}
+            icon={<Crown size={24} />}
+            points={75}
+          />
+        </div>
+      </div>
+
+      {/* Leaderboard Preview */}
+      <div className="px-6 py-8">
+        <h3 className="text-xl font-bold mb-6 flex items-center">
+          <Crown size={20} className="text-[#D4AF37] mr-2" />
+          Weekly Leaderboard
+        </h3>
+        <div className="bg-[#1C2541] rounded-lg overflow-hidden border border-[#D4AF37]/20">
+          <div className="px-4 py-3 bg-[#0A1128] border-b border-[#D4AF37]/20 flex items-center justify-between">
+            <span className="font-medium">Top Viewers This Week</span>
+            <span className="text-sm text-[#D4AF37]">Reset in 3 days</span>
+          </div>
+          <div>
+            <LeaderboardRow rank={1} username="MovieMaster" points={8750} isUser={false} />
+            <LeaderboardRow rank={2} username="FilmFanatic" points={7200} isUser={false} />
+            <LeaderboardRow rank={3} username="CinematicSoul" points={6840} isUser={false} />
+            <LeaderboardRow rank={4} username="YouUser" points={5620} isUser={true} />
+            <LeaderboardRow rank={5} username="ReelReviewer" points={4980} isUser={false} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Navigation Item Component
+function NavItem({ label, active, onClick }) {
+  return (
+    <button 
+      className={`relative py-2 text-sm font-medium transition-colors ${active ? 'text-[#D4AF37]' : 'text-[#E5E5E5] hover:text-white'}`}
+      onClick={onClick}
+    >
+      {label}
+      {active && (
+        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#D4AF37]"></span>
+      )}
+    </button>
+  );
+}
+
+// Content Card Component
+function ContentCard({ title, image, progress, rating, year }) {
+  return (
+    <div className="relative group rounded-md overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+      <img src={image} alt={title} className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
+      <div className="absolute bottom-0 left-0 right-0 p-3 z-20">
+        <h4 className="text-sm font-medium truncate">{title}</h4>
+        <div className="flex items-center mt-1 text-xs text-[#E5E5E5]">
+          <Star fill="#D4AF37" stroke="none" size={12} className="mr-1" />
+          <span>{rating}</span>
+          <span className="mx-2">•</span>
+          <span>{year}</span>
+        </div>
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#1C2541] z-10">
+        <div 
+          className="h-full bg-[#D4AF37]" 
+          style={{ width: `${progress}%` }}
+        ></div>
+      </div>
+      <button className="absolute inset-0 m-auto w-12 h-12 bg-[#DC143C] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-30 transform group-hover:scale-110 transition-transform">
+        <Play size={24} fill="white" />
+      </button>
+    </div>
+  );
+}
+
+// Achievement Card Component
+function AchievementCard({ title, description, progress, icon, points, completed }) {
+  return (
+    <div className={`bg-[#1C2541] rounded-lg p-4 border ${completed ? 'border-[#D4AF37]' : 'border-[#1C2541]'}`}>
+      <div className="flex items-start">
+        <div className={`w-10 h-10 rounded-full flex items-center justify-center ${completed ? 'bg-[#D4AF37]' : 'bg-[#1C2541] border border-[#D4AF37]'}`}>
+          <div className={`${completed ? 'text-[#0A1128]' : 'text-[#D4AF37]'}`}>
+            {icon}
+          </div>
+        </div>
+        <div className="ml-3 flex-1">
+          <h4 className="font-medium">{title}</h4>
+          <p className="text-sm text-[#E5E5E5] mt-1">{description}</p>
+          <div className="mt-3">
+            <div className="flex justify-between text-xs mb-1">
+              <span>{progress}% Complete</span>
+              <span className="text-[#D4AF37]">{points} points</span>
+            </div>
+            <div className="h-1.5 bg-[#0A1128] rounded-full overflow-hidden">
+              <div 
+                className={`h-full ${completed ? 'bg-[#D4AF37]' : 'bg-[#DC143C]'}`}
+                style={{ width: `${progress}%` }}
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Leaderboard Row Component
+function LeaderboardRow({ rank, username, points, isUser }) {
+  return (
+    <div className={`px-4 py-3 flex items-center border-b border-[#D4AF37]/10 ${isUser ? 'bg-[#D4AF37]/10' : ''}`}>
+      <div className={`w-6 h-6 rounded-full flex items-center justify-center ${rank <= 3 ? 'bg-[#D4AF37]' : 'bg-[#1C2541] border border-[#D4AF37]/30'}`}>
+        <span className={`text-xs font-bold ${rank <= 3 ? 'text-[#0A1128]' : 'text-[#E5E5E5]'}`}>{rank}</span>
+      </div>
+      <div className="ml-3 flex-1">
+        <span className={`font-medium ${isUser ? 'text-[#D4AF37]' : ''}`}>{username}</span>
+      </div>
+      <div className="flex items-center">
+        <Star size={14} className="text-[#D4AF37] mr-1" />
+        <span className="font-medium">{points.toLocaleString()}</span>
+      </div>
+    </div>
+  );
+}
